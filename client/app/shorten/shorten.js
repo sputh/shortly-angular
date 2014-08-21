@@ -16,6 +16,7 @@ angular.module('shortly.shorten', [])
     console.log(jsoned);
       Links.shorten(jsoned)
       .then(function(data) {
+        $scope.text = '';
         console.log(data);
       })
       .catch(function(error) {

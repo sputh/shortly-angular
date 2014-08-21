@@ -1,7 +1,8 @@
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <input placeholder="Search here" type="text" name="search" ng-model="searchQ">
   <ul>
-    <li class="link" ng-repeat="url in data.links">
+    <li class="link" ng-repeat="url in data.links | filter:searchQ ">
     <a href="/api/links/{{url.code}}"><img src="assets/redirect_icon.png"></a>
     <span class="title">{{url.title}}</span>
     <span class="original">{{url.url}}</span>
