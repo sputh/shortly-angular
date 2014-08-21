@@ -7,32 +7,35 @@ angular.module('shortly', [
   'ngAnimate',
   'ui.router'
 ])
-.config(function($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/signin', {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  $urlRouterProvider.otherwise('/home');
+
+  $stateProvider
+    .state('signin', {
+      url: '/signin',
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/signup', {
+
+    .state('signup', {
+      url: '/signup',
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
-    // Your code here
-    .when('/links', {
+  //   // Your code here
+    .state('links', {
+      url: '/links',
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })
-    .when('/shorten', {
+    .state('shorten', {
+      url: '/shorten',
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-    })
-    .when('/', {
-      templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
     });
-    // We add our $httpInterceptor into the array
-    // of interceptors. Think of it like middleware for your ajax calls
-    $httpProvider.interceptors.push('AttatchTokens');
+  //   // We add our $httpInterceptor into the array
+  //   // of interceptors. Think of it like middleware for your ajax calls
+  //   $stateProvider.interceptors.push('AttatchTokens');
 })
 .factory('AttatchTokens', function ($window) {
   // this is an $httpInterceptor

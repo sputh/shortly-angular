@@ -1,11 +1,11 @@
-<div id='container' ng-controller="LinksController">
+<div id='container'>
   <!-- Your html here -->
   <input placeholder="Search here" type="text" name="search" ng-model="searchQ">
   <ul class="linkList">
     <li class="link" ng-repeat="url in data.links | orderBy:'visits':'reverse' | filter:searchQ">
     <a href="/api/links/{{url.code}}"><img class="click" src="assets/redirect_icon.png"></a>
-    <span class="title">{{url.title}}</span>
-    <span class="original">{{url.url}}</span>
+    <span class="title">{{url.title | limitTo: 75}}</span>
+    <a href="/api/links/{{url.code}}"><span class="original">{{url.url}}</span></a>
      <!-- <span class="info">{{url.code}} </span> -->
     <span ng-model="visits" name="visits" class="visits">visits: {{url.visits}}</span>
      <img class="clock" src="assets/clock_icon.jpeg">

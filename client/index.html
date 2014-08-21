@@ -10,12 +10,12 @@
     <h1>Shortly</h1>
     <div class="navigation">
       <ul>
-        <li><a href="/#/links">Links</a></li>
-        <li><a href="/#/shorten">Shorten</a></li>
+        <li><a ui-sref="links">Links</a></li>
+        <li><a ui-sref="shorten">Shorten</a></li>
       </ul>
      </div>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <div ui-view></div>
 
     <script>
       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
