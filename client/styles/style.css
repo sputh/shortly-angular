@@ -2,6 +2,7 @@ body {
   margin: 0;
   margin-top: 10px;
   font-family: arial, sans-serif;
+  background: url('../assets/background.jpg');
 }
 
 a {
@@ -13,6 +14,10 @@ a {
 h1 {
   font-style: italic;
   margin-bottom: 10px;
+}
+
+#wrapper {
+  margin: 2%;
 }
 
 .navigation {
@@ -53,6 +58,10 @@ h1 {
   margin-top: 10px;
 }
 
+.linkList {
+  list-style: none;
+}
+
 .link {
   clear: both;
   margin-bottom: 5px;
@@ -61,18 +70,26 @@ h1 {
 }
 
 .link:hover {
-  background-color: #efe;
+  background-color: rgba(109,197,227, .5);
+  letter-spacing: 2px;
 }
 
-.link img {
+.link .click {
   float: left;
   margin: 0 5px;
+}
+
+.link .clock {
+  float: right;
+  width:3%;
+  height: 3%;
+  margin-left: 15px;
 }
 
 .link .visits {
   float: right;
   margin-right: 10px;
-  margin-left: 20px;
+  margin-left: 3px;
 }
 
 .link .visits .count {
@@ -85,7 +102,12 @@ h1 {
 }
 
 .link .original {
-  color: #aaa;
+  color: #73E0F1;
+  font-size: 12px;
+}
+
+.link:hover .original {
+  color: #2A30F5;
   font-size: 12px;
 }
 
@@ -141,3 +163,33 @@ input[type=url] {
 .creator .message {
   clear: both;
 }
+
+.link.ng-enter,
+.link.ng-leave
+{
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+}
+
+.link.ng-leave.ng-leave-active,
+.link.ng-enter {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.link.ng-enter.ng-enter-active,
+.link.ng-leave {
+    opacity: 1;
+    width: 150px;
+    height: 30px;
+}
+
