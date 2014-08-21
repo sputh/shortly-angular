@@ -16,14 +16,25 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
-
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
+    .when('/shorten', {
+      templateUrl: 'app/shorten/shorten.html',
+      controller: 'ShortenController'
+    })
+    .when('/', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    });
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttatchTokens');
 })
 .factory('AttatchTokens', function ($window) {
   // this is an $httpInterceptor
-  // its job is to stop all out going request
+  // its job is to stop all out-going request
   // then look in local storage and find the user's token
   // then add it to the header so the server can validate the request
   var attach = {
