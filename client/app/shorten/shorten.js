@@ -10,9 +10,16 @@ angular.module('shortly.shorten', [])
       return res;
     });
   };
-  $scope.submitForm = function(isValid) {
-    if (isValid) {
-      $scope.addLink();
-    };
-  }
+  $scope.submit = function() {
+    console.log($scope.text);
+    var jsoned = {url : $scope.text};
+    console.log(jsoned);
+      Links.shorten(jsoned)
+      .then(function(data) {
+        console.log(data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 });

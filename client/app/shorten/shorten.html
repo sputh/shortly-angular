@@ -1,7 +1,7 @@
 <div id='container' ng-controller="ShortenController" ng-init="init()">
 <!-- Your code here -->
 <form name="shorten" ng-submit="submit()" novalidate>
-<input type="url" name="url" ng-model="text" required/>
+<input type="url" ng-model="text" required/>
 <p ng-show="shorten.url.$invalid && !shorten.url.$pristine">not a valid url</p>
 <input type="submit" id="submit" value="submit" ng-disabled="shorten.$invalid"/>
 </form>

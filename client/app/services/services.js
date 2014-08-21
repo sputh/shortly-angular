@@ -15,10 +15,11 @@ angular.module('shortly.services', [])
     });
   };
 
-  var shorten = function() {
+  var shorten = function(url) {
     return $http({
       method: 'POST',
-      url: '/api/links'
+      url: '/api/links',
+      data: url
     })
     .then(function(resp) {
       console.log("resp", resp);
