@@ -1,9 +1,7 @@
-<li class="link" ng-animate="animate">
-
-  <a href="/api/links/{{url.code}}"><img class="click" src="assets/redirect_icon.png"></a>
-  <span class="title">{{url.title | limitTo: 75}}</span>
-  <a href="/api/links/{{url.code}}"><span class="original">{{url.url}}</span></a>
-  <!-- <span class="info">{{url.code}} </span> -->
-  <span ng-model="visits" name="visits" class="visits">visits: {{url.visits}}</span>
-  <img class="clock" src="assets/clock_icon.jpeg">
-</li>
+    <li class="link">
+    <a href="/api/links/{{url.code}}"><img class="click" src="assets/redirect_icon.png"></a>
+    <span class="title">{{url.title | limitTo: 75}}</span>
+    <a href="/api/links/{{url.code}}"><span class="original">{{url.url}}</span></a>
+    <span ng-model="visits" name="visits" class="visits">visits: {{url.visits}}</span>
+     <img class="clock" src="assets/clock_icon.jpeg">
+    </li>
