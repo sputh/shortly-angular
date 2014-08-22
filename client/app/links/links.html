@@ -1,15 +1,24 @@
 <div id='container'>
   <!-- Your html here -->
   <input placeholder="Search here" type="text" name="search" ng-model="searchQ">
+<!--
   <ul class="linkList">
-    <li class="link" ng-repeat="url in data.links | orderBy:'visits':'reverse' | filter:searchQ">
+    <li class="link">
     <a href="/api/links/{{url.code}}"><img class="click" src="assets/redirect_icon.png"></a>
     <span class="title">{{url.title | limitTo: 75}}</span>
     <a href="/api/links/{{url.code}}"><span class="original">{{url.url}}</span></a>
-     <!-- <span class="info">{{url.code}} </span> -->
     <span ng-model="visits" name="visits" class="visits">visits: {{url.visits}}</span>
      <img class="clock" src="assets/clock_icon.jpeg">
     </li>
+  </ul> -->
+  <ul class="linkList">
+  <div ng-animate="animate" ng-repeat="url in data.links | orderBy:'visits':'reverse' | filter:searchQ">
+ <!--    {{ url }} -->
+    <links-object url-in-directive="url"></links-object>
+  </div>
   </ul>
 
 </div>
+
+
+
